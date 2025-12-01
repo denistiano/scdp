@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - СЦДП</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 30px;
+            text-align: center;
+        }
+        .contact-hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .contact-hero p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: -50px auto 60px;
+            max-width: 1200px;
+            padding: 0 30px;
+        }
+        .contact-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+        }
+        .contact-card h3 {
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .contact-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        .contact-card a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-card a:hover {
+            color: var(--primary);
+        }
+        .info-section {
+            background: var(--light);
+            padding: 80px 30px;
+            text-align: center;
+        }
+        .info-section h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        .info-section p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="top-bar">
+        <div class="container">
+            <div>☎ 066/800-077 | ✉ <a href="mailto:booking@scdp.bg">booking@scdp.bg</a></div>
+            <div>гр. Габрово | Работно време: Пн-Пт 8:30-17:00</div>
+        </div>
+    </div>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo-scdp-bg.png" alt="СЦДП" onerror="this.style.display='none'">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="hotels.html">Настаняване</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="news.html">Новини</a></li>
+                    <li><a href="contacts.html">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    
+    <div class="contact-hero">
+        <h1>Свържете се с нас</h1>
+        <p>Готови сме да отговорим на вашите въпроси</p>
+    </div>
+    
+    <div class="contact-cards">
+        <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <h3>Адрес</h3>
+            <p>гр. Габрово 5300<br>
+            ул. „Бодра смяна" 3<br>
+            <strong>Работно време:</strong><br>
+            Понеделник - Петък<br>
+            8:30 - 17:00 ч.</p>
+        </div>
+        
+        <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h3>Телефон & Факс</h3>
+            <p><strong>Телефон:</strong><br>
+            <a href="tel:066800077">066 800 077</a></p>
+            <p><strong>Факс:</strong><br>
+            066 800 094</p>
+            <div style="margin-top: 25px;">
+                <a href="tel:066800077" class="btn">Обадете се</a>
+            </div>
+        </div>
+        
+        <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <h3>Email</h3>
+            <p><strong>Офис:</strong><br>
+            <a href="mailto:office@scdp.bg">office@scdp.bg</a></p>
+            <p><strong>Резервации:</strong><br>
+            <a href="mailto:booking@scdp.bg">booking@scdp.bg</a></p>
+            <div style="margin-top: 25px;">
+                <a href="mailto:booking@scdp.bg" class="btn">Изпратете запитване</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-section">
+        <div class="container">
+            <h2>За Северноцентралното държавно предприятие</h2>
+            <p>СЦДП управлява ловни територии в Североизточна България, включващи райони с богата фауна 
+            и изключителни възможности за професионален лов. Предлагаме настаняване в комфортни ловни хижи, 
+            професионални ловни програми и туристически маршрути.</p>
+            <p>За повече информация посетете: 
+            <a href="http://voden.bg" target="_blank" rel="noopener" style="color: var(--secondary); font-weight: 600;">voden.bg</a></p>
+            <div style="margin-top: 40px;">
+                <a href="files/hunt-season-2015.pdf" target="_blank" class="btn" style="font-size: 16px; padding: 18px 45px;">
+                    📄 Ловен сезон 2015 (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакти</h3>
+                    <p>гр. Габрово 5300<br>
+                    ул. „Бодра смяна" 3<br>
+                    тел. 066 800 077<br>
+                    e-mail: booking@scdp.bg</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Работно време</h3>
+                    <p>Понеделник - Петък<br>
+                    8:30 - 17:00 ч.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Бързи връзки</h3>
+                    <a href="hotels.html">Настаняване</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="files/hunt-season-2015.pdf" target="_blank">Ловен сезон 2015 (PDF)</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 СЦДП. Всички права запазени.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
