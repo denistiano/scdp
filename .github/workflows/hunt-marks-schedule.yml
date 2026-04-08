@@ -1,0 +1,58 @@
+# Automatic: scrape latest hunt marks (справка) → rebuild static site → commit.
+# Configure GitHub Pages to publish from the `website/` folder on your default branch
+# (Settings → Pages → Build from branch → /website), or use a compatible setup.
+#
+# Schedule: every 5 minutes (UTC). This matches GitHub’s supported minimum for `schedule`;
+# increase the cron interval later when you are done testing (e.g. hourly).
+#
+# Requires in the repo: booking_content.json, hunting_hero_images/, booking_images/ (if used),
+# booking_files/ (if used) — same as a local `python3 build_from_json.py` run.
+
+name: Hunt marks — scrape and rebuild site
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch: {}
+  repository_dispatch:
+    types: [refresh-hunt-marks]
+
+concurrency:
+  group: hunt-marks-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install --disable-pip-version-check -q requests beautifulsoup4
+
+      - name: Scrape hunt marks
+        run: python3 crawl_hunt_marks.py
+
+      - name: Rebuild website (embeds fresh hunt_marks_data.json)
+        run: python3 build_from_json.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hunt_marks_data.json website
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: refresh hunt marks and rebuild site [skip ci]"
+            git push
+          fi
