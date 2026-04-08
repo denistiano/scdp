@@ -1,5 +1,4 @@
-# SCDP Website
-
+# SCDP
 Modern hunting and tourism website for SCDP (Североцентралното държавно предприятие).
 
 ## Quick Start
