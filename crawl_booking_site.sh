@@ -235,14 +235,23 @@ echo '' >> "$OUTPUT_JSON"
 echo '  ]' >> "$OUTPUT_JSON"
 echo '}' >> "$OUTPUT_JSON"
 
-# Download logo
-echo "📥 Downloading logo..."
+# Download logos
+echo "📥 Downloading logos..."
 LOGO_URL="https://scdp.bg/booking/assets/img/logo-scdp-bg.png"
+LOGO_MOBILE_URL="https://scdp.bg/assets/theme/images/logo/logo-left.png"
+
 curl -sL --max-time 10 -o "$IMAGES_DIR/logo-scdp-bg.png" "$LOGO_URL" 2>/dev/null
 if [ $? -eq 0 ]; then
-    echo "✓ Logo downloaded"
+    echo "✓ Desktop logo downloaded"
 else
-    echo "⚠ Logo download failed"
+    echo "⚠ Desktop logo download failed"
+fi
+
+curl -sL --max-time 10 -o "$IMAGES_DIR/logo-mobile.png" "$LOGO_MOBILE_URL" 2>/dev/null
+if [ $? -eq 0 ]; then
+    echo "✓ Mobile logo downloaded"
+else
+    echo "⚠ Mobile logo download failed"
 fi
 
 echo "✅ Enhanced crawling complete!"

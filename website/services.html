@@ -2,7 +2,8 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Ловни услуги - СЦДП</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,18 +18,28 @@
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <img src="images/logo-scdp-bg.png" alt="СЦДП" onerror="this.style.display='none'">
+                <img src="images/logo-scdp-bg.png" alt="СЦДП" class="logo-desktop" onerror="this.style.display='none'">
+                <img src="images/logo-mobile.png" alt="СЦДП" class="logo-mobile" onerror="this.style.display='none'">
             </a>
-            <nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <nav id="mobile-nav">
                 <ul>
                     <li><a href="index.html">Начало</a></li>
                     <li><a href="hotels.html">Настаняване</a></li>
                     <li><a href="services.html">Услуги</a></li>
                     <li><a href="news.html">Новини</a></li>
+                    <li><a href="hunt-marks.html">Справка Отстрел</a></li>
                     <li><a href="contacts.html">Контакти</a></li>
                 </ul>
             </nav>
         </div>
+        <div class="mobile-overlay" id="mobile-overlay"></div>
     </header>
     
     
@@ -235,6 +246,7 @@
                     <h3>Бързи връзки</h3>
                     <a href="hotels.html">Настаняване</a>
                     <a href="services.html">Услуги</a>
+                    <a href="hunt-marks.html">Справка Отстрел</a>
                     <a href="files/hunt-season-2015.pdf" target="_blank">Ловен сезон 2015 (PDF)</a>
                 </div>
             </div>
@@ -255,7 +267,7 @@
                 <p>Дестинации: Лъгът, Воден, Ири Хисар, Батаклията, Батин, Кокиче, Елен, Фазан</p>
 <p>Еднодневните разходки в планината с фотоапарати, дават възможност на ловците да запечатат прекрасни кадри с множество диви животни в сърцето на Балкана. Фотоловът предлага освен среща с елени, сърни, елени лопатари, диви прасета и друг дребен дивеч, откъсване от забързаното ежедневие, чист въздух и спиращи дъха природни гледки. Професионалният водач, предвождащ групата, провежда кратък курс по разпознаване на различни видове следи, показва основни тънкости в проследяването и издебването на тези прекрасни животни.</p>
 
-                <div class="modal-images"><img src="images/10801591_383877848438794_631674536018427382_n_800x600.jpg" alt="Image"><img src="images/1658301_838101019545335_8100905433386145459_o_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-services-fotolov-32"><img src="images/10801591_383877848438794_631674536018427382_n_800x600.jpg" alt="Image" onclick="openLightbox('modal-services-fotolov-32', 0)"><img src="images/1658301_838101019545335_8100905433386145459_o_800x600.jpg" alt="Image" onclick="openLightbox('modal-services-fotolov-32', 1)"></div>
             </div>
             
             <div class="modal-footer">
@@ -265,6 +277,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-services-fotolov-32" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-services-fotolov-32')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-services-fotolov-32', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-services-fotolov-32" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-services-fotolov-32', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-services-fotolov-32"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_services_fotolov_32 = ["images/10801591_383877848438794_631674536018427382_n_800x600.jpg", "images/1658301_838101019545335_8100905433386145459_o_800x600.jpg"];
+            window.currentLightboxIndex_modal_services_fotolov_32 = 0;
+        </script>
+        
     
     <div id="modal-services-grupov-lov-na-diva-svinia-10" class="modal">
         <div class="modal-content">
@@ -290,6 +317,7 @@
         </div>
     </div>
     
+    
     <div id="modal-services-grupov-lov-na-diva-svinia-lugut-17" class="modal">
         <div class="modal-content">
             <div class="modal-header" style="background-image: url('images/GrupovLovLagat_800x600.jpg')">
@@ -312,6 +340,7 @@
         
         </div>
     </div>
+    
     
     <div id="modal-services-individualen-lov-na-diva-svinia-9" class="modal">
         <div class="modal-content">
@@ -336,6 +365,7 @@
         </div>
     </div>
     
+    
     <div id="modal-services-individualen-lov-na-diva-svinia-lugut-16" class="modal">
         <div class="modal-content">
             <div class="modal-header" style="background-image: url('images/TorofejLagat_800x600.jpg')">
@@ -356,6 +386,7 @@
         
         </div>
     </div>
+    
     
     <div id="modal-services-lov-na-blagoroden-elen-25" class="modal">
         <div class="modal-content">
@@ -382,6 +413,7 @@
         </div>
     </div>
     
+    
     <div id="modal-services-lov-na-blagoroden-elen-lugut-14" class="modal">
         <div class="modal-content">
             <div class="modal-header" style="background-image: url('images/forest-path.jpg')">
@@ -405,6 +437,7 @@
         </div>
     </div>
     
+    
     <div id="modal-services-lov-na-elen-lopatar-11" class="modal">
         <div class="modal-content">
             <div class="modal-header" style="background-image: url('images/forest-path.jpg')">
@@ -426,6 +459,7 @@
         
         </div>
     </div>
+    
     
     <div id="modal-services-lov-na-fazan-i-dreben-divech-21" class="modal">
         <div class="modal-content">
@@ -450,6 +484,7 @@
         </div>
     </div>
     
+    
     <div id="modal-services-lov-na-srundak-2" class="modal">
         <div class="modal-content">
             <div class="modal-header" style="background-image: url('images/forest-path.jpg')">
@@ -473,6 +508,7 @@
         </div>
     </div>
     
+    
     <div id="modal-services-lov-na-srundak-lugut-15" class="modal">
         <div class="modal-content">
             <div class="modal-header" style="background-image: url('images/forest-path.jpg')">
@@ -495,6 +531,7 @@
         </div>
     </div>
     
+    
     <div id="modal-services-obuchenie-na-lovni-kucheta-za-dreben-divech-23" class="modal">
         <div class="modal-content">
             <div class="modal-header" style="background-image: url('images/forest-path.jpg')">
@@ -514,6 +551,7 @@
         
         </div>
     </div>
+    
     
     <div id="modal-services-prodajba-na-divechovo-meso-33" class="modal">
         <div class="modal-content">
@@ -537,6 +575,7 @@
         </div>
     </div>
     
+    
     <div id="modal-services-ribolov-24" class="modal">
         <div class="modal-content">
             <div class="modal-header" style="background-image: url('images/forest-path.jpg')">
@@ -558,6 +597,7 @@
         
         </div>
     </div>
+    
     
     <script src="assets/js/main.js"></script>
 </body>

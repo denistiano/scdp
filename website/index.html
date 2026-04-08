@@ -2,7 +2,8 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>СЦДП - Професионален лов и туризъм</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,18 +18,28 @@
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <img src="images/logo-scdp-bg.png" alt="СЦДП" onerror="this.style.display='none'">
+                <img src="images/logo-scdp-bg.png" alt="СЦДП" class="logo-desktop" onerror="this.style.display='none'">
+                <img src="images/logo-mobile.png" alt="СЦДП" class="logo-mobile" onerror="this.style.display='none'">
             </a>
-            <nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <nav id="mobile-nav">
                 <ul>
                     <li><a href="index.html">Начало</a></li>
                     <li><a href="hotels.html">Настаняване</a></li>
                     <li><a href="services.html">Услуги</a></li>
                     <li><a href="news.html">Новини</a></li>
+                    <li><a href="hunt-marks.html">Справка Отстрел</a></li>
                     <li><a href="contacts.html">Контакти</a></li>
                 </ul>
             </nav>
         </div>
+        <div class="mobile-overlay" id="mobile-overlay"></div>
     </header>
     
     
@@ -165,6 +176,7 @@
                     <h3>Бързи връзки</h3>
                     <a href="hotels.html">Настаняване</a>
                     <a href="services.html">Услуги</a>
+                    <a href="hunt-marks.html">Справка Отстрел</a>
                     <a href="files/hunt-season-2015.pdf" target="_blank">Ловен сезон 2015 (PDF)</a>
                 </div>
             </div>
@@ -191,7 +203,7 @@
 <p>Основните видове дивеч са: благороден елен, дива свиня, сърна, заек, фазан, както и вълк, чакал и лисица.</p>
 <p>По-специално внимание заслужава да се отдели на лова на благороден елен и сръндак. Брачният период на благородния елен стартира в началото на месец септември и продължава до първите дни от месец октомври. През това време се отстрелват 10 до 15 трофейни благородни елена. Най-добрият период за лов на качествени трофеи от сръндак пък е през месец май. Трофеите обикновено варират от 300 до 450 гр.</p>
 
-                <div class="modal-images"><img src="images/0_800x600.jpg" alt="Image"><img src="images/10_3_800x600.jpg" alt="Image"><img src="images/1_9_800x600.jpg" alt="Image"><img src="images/2_2_800x600.jpg" alt="Image"><img src="images/3_1_800x600.jpg" alt="Image"><img src="images/4_800x600.jpg" alt="Image"><img src="images/5_2_800x600.jpg" alt="Image"><img src="images/6_4_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-batakliiata-13"><img src="images/0_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 0)"><img src="images/10_3_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 1)"><img src="images/1_9_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 2)"><img src="images/2_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 3)"><img src="images/3_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 4)"><img src="images/4_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 5)"><img src="images/5_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 6)"><img src="images/6_4_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 7)"></div>
             </div>
             
             <div class="modal-footer">
@@ -201,6 +213,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-batakliiata-13" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-batakliiata-13')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-batakliiata-13', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-batakliiata-13" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-batakliiata-13', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-batakliiata-13"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_batakliiata_13 = ["images/0_800x600.jpg", "images/10_3_800x600.jpg", "images/1_9_800x600.jpg", "images/2_2_800x600.jpg", "images/3_1_800x600.jpg", "images/4_800x600.jpg", "images/5_2_800x600.jpg", "images/6_4_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_batakliiata_13 = 0;
+        </script>
+        
     
     <div id="modal-hotels-batin-14" class="modal">
         <div class="modal-content">
@@ -218,7 +245,7 @@
 <p>През топлите месеци е удоволствие да се релаксира на чист въздух в беседката с барбекю само на метри от сградата. Гостоприемната атмосфера се допълва от изискана кухня и вежлив персонал.</p>
 <p>Сред най-добрите трофеи, отстрелвани в ДЛС Дунав са: благороден елен (13,5 кг, оценен на 250 CIC точки), сръндак  505 гр., както и глиган, чийто трофей е с повече от 220 CIC точки. Положително влияние върху качеството на трофеите оказват благоприятните климатични условия на района и добрата хранителна база в стопанството. ДЛС Дунав предлага отлични условия за лов на фазани на полигон чрез търсене с кучета. Фазаните са главно фермерско производното, но се срещат и диви в природата. Фазанарията функионира от 1975 г. Капацитетът и за развъждане е 40 000 хил., а за отглеждане е 15 000 хил. фазана годишно. В момента се отглежда главно корейски фазан, но условията позволяват развъждането и на други видове в зависимост от търсенето.</p>
 
-                <div class="modal-images"><img src="images/13_3_800x600.jpg" alt="Image"><img src="images/13a_800x600.jpg" alt="Image"><img src="images/15a_1_800x600.jpg" alt="Image"><img src="images/16_3_800x600.jpg" alt="Image"><img src="images/P10509041_800x600.jpg" alt="Image"><img src="images/Picture007_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-batin-14"><img src="images/13_3_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 0)"><img src="images/13a_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 1)"><img src="images/15a_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 2)"><img src="images/16_3_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 3)"><img src="images/P10509041_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 4)"><img src="images/Picture007_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 5)"></div>
             </div>
             
             <div class="modal-footer">
@@ -228,6 +255,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-batin-14" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-batin-14')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-batin-14', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-batin-14" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-batin-14', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-batin-14"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_batin_14 = ["images/13_3_800x600.jpg", "images/13a_800x600.jpg", "images/15a_1_800x600.jpg", "images/16_3_800x600.jpg", "images/P10509041_800x600.jpg", "images/Picture007_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_batin_14 = 0;
+        </script>
+        
     
     <div id="modal-hotels-elen-18" class="modal">
         <div class="modal-content">
@@ -245,7 +287,7 @@
 <p>На територията на стопанството се намира Историко-археологически резерват &quot;Сборяново&quot;. Могат да се организират посещения на Ивановски скални църкви и Бесарбовски скален манастир. От природните забележителности заслужава да се посетят защитените местности Мющерека, естествените находища на див божур и на турска леска край гр. Кубрат, скалните венци в с. Каменово.</p>
 <p>Общата площ на ловностопанските райони на ДГС Сеслав е 8754 ха. Те са разположени върху равнинно-хълмист терен със средна надморска височина 200 метра.</p>
 
-                <div class="modal-images"><img src="images/15a_800x600.jpg" alt="Image"><img src="images/18_3_800x600.jpg" alt="Image"><img src="images/21_3_800x600.jpg" alt="Image"><img src="images/_7_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-elen-18"><img src="images/15a_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-elen-18', 0)"><img src="images/18_3_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-elen-18', 1)"><img src="images/21_3_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-elen-18', 2)"><img src="images/_7_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-elen-18', 3)"></div>
             </div>
             
             <div class="modal-footer">
@@ -255,6 +297,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-elen-18" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-elen-18')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-elen-18', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-elen-18" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-elen-18', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-elen-18"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_elen_18 = ["images/15a_800x600.jpg", "images/18_3_800x600.jpg", "images/21_3_800x600.jpg", "images/_7_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_elen_18 = 0;
+        </script>
+        
     
     
     <div id="modal-services-fotolov-32" class="modal">
@@ -267,7 +324,7 @@
                 <p>Дестинации: Лъгът, Воден, Ири Хисар, Батаклията, Батин, Кокиче, Елен, Фазан</p>
 <p>Еднодневните разходки в планината с фотоапарати, дават възможност на ловците да запечатат прекрасни кадри с множество диви животни в сърцето на Балкана. Фотоловът предлага освен среща с елени, сърни, елени лопатари, диви прасета и друг дребен дивеч, откъсване от забързаното ежедневие, чист въздух и спиращи дъха природни гледки. Професионалният водач, предвождащ групата, провежда кратък курс по разпознаване на различни видове следи, показва основни тънкости в проследяването и издебването на тези прекрасни животни.</p>
 
-                <div class="modal-images"><img src="images/10801591_383877848438794_631674536018427382_n_800x600.jpg" alt="Image"><img src="images/1658301_838101019545335_8100905433386145459_o_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-services-fotolov-32"><img src="images/10801591_383877848438794_631674536018427382_n_800x600.jpg" alt="Image" onclick="openLightbox('modal-services-fotolov-32', 0)"><img src="images/1658301_838101019545335_8100905433386145459_o_800x600.jpg" alt="Image" onclick="openLightbox('modal-services-fotolov-32', 1)"></div>
             </div>
             
             <div class="modal-footer">
@@ -277,6 +334,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-services-fotolov-32" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-services-fotolov-32')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-services-fotolov-32', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-services-fotolov-32" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-services-fotolov-32', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-services-fotolov-32"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_services_fotolov_32 = ["images/10801591_383877848438794_631674536018427382_n_800x600.jpg", "images/1658301_838101019545335_8100905433386145459_o_800x600.jpg"];
+            window.currentLightboxIndex_modal_services_fotolov_32 = 0;
+        </script>
+        
     
     <div id="modal-services-grupov-lov-na-diva-svinia-10" class="modal">
         <div class="modal-content">
@@ -302,6 +374,7 @@
         </div>
     </div>
     
+    
     <div id="modal-services-grupov-lov-na-diva-svinia-lugut-17" class="modal">
         <div class="modal-content">
             <div class="modal-header" style="background-image: url('images/GrupovLovLagat_800x600.jpg')">
@@ -324,6 +397,7 @@
         
         </div>
     </div>
+    
     
     <script src="assets/js/main.js"></script>
 </body>

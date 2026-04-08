@@ -2,7 +2,8 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Контакти - СЦДП</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
@@ -98,18 +99,28 @@
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <img src="images/logo-scdp-bg.png" alt="СЦДП" onerror="this.style.display='none'">
+                <img src="images/logo-scdp-bg.png" alt="СЦДП" class="logo-desktop" onerror="this.style.display='none'">
+                <img src="images/logo-mobile.png" alt="СЦДП" class="logo-mobile" onerror="this.style.display='none'">
             </a>
-            <nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <nav id="mobile-nav">
                 <ul>
                     <li><a href="index.html">Начало</a></li>
                     <li><a href="hotels.html">Настаняване</a></li>
                     <li><a href="services.html">Услуги</a></li>
                     <li><a href="news.html">Новини</a></li>
+                    <li><a href="hunt-marks.html">Справка Отстрел</a></li>
                     <li><a href="contacts.html">Контакти</a></li>
                 </ul>
             </nav>
         </div>
+        <div class="mobile-overlay" id="mobile-overlay"></div>
     </header>
     
     
@@ -190,6 +201,7 @@
                     <h3>Бързи връзки</h3>
                     <a href="hotels.html">Настаняване</a>
                     <a href="services.html">Услуги</a>
+                    <a href="hunt-marks.html">Справка Отстрел</a>
                     <a href="files/hunt-season-2015.pdf" target="_blank">Ловен сезон 2015 (PDF)</a>
                 </div>
             </div>

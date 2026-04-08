@@ -2,7 +2,8 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Настаняване - СЦДП</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,18 +18,28 @@
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <img src="images/logo-scdp-bg.png" alt="СЦДП" onerror="this.style.display='none'">
+                <img src="images/logo-scdp-bg.png" alt="СЦДП" class="logo-desktop" onerror="this.style.display='none'">
+                <img src="images/logo-mobile.png" alt="СЦДП" class="logo-mobile" onerror="this.style.display='none'">
             </a>
-            <nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <nav id="mobile-nav">
                 <ul>
                     <li><a href="index.html">Начало</a></li>
                     <li><a href="hotels.html">Настаняване</a></li>
                     <li><a href="services.html">Услуги</a></li>
                     <li><a href="news.html">Новини</a></li>
+                    <li><a href="hunt-marks.html">Справка Отстрел</a></li>
                     <li><a href="contacts.html">Контакти</a></li>
                 </ul>
             </nav>
         </div>
+        <div class="mobile-overlay" id="mobile-overlay"></div>
     </header>
     
     
@@ -175,6 +186,7 @@
                     <h3>Бързи връзки</h3>
                     <a href="hotels.html">Настаняване</a>
                     <a href="services.html">Услуги</a>
+                    <a href="hunt-marks.html">Справка Отстрел</a>
                     <a href="files/hunt-season-2015.pdf" target="_blank">Ловен сезон 2015 (PDF)</a>
                 </div>
             </div>
@@ -201,7 +213,7 @@
 <p>Основните видове дивеч са: благороден елен, дива свиня, сърна, заек, фазан, както и вълк, чакал и лисица.</p>
 <p>По-специално внимание заслужава да се отдели на лова на благороден елен и сръндак. Брачният период на благородния елен стартира в началото на месец септември и продължава до първите дни от месец октомври. През това време се отстрелват 10 до 15 трофейни благородни елена. Най-добрият период за лов на качествени трофеи от сръндак пък е през месец май. Трофеите обикновено варират от 300 до 450 гр.</p>
 
-                <div class="modal-images"><img src="images/0_800x600.jpg" alt="Image"><img src="images/10_3_800x600.jpg" alt="Image"><img src="images/1_9_800x600.jpg" alt="Image"><img src="images/2_2_800x600.jpg" alt="Image"><img src="images/3_1_800x600.jpg" alt="Image"><img src="images/4_800x600.jpg" alt="Image"><img src="images/5_2_800x600.jpg" alt="Image"><img src="images/6_4_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-batakliiata-13"><img src="images/0_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 0)"><img src="images/10_3_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 1)"><img src="images/1_9_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 2)"><img src="images/2_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 3)"><img src="images/3_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 4)"><img src="images/4_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 5)"><img src="images/5_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 6)"><img src="images/6_4_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batakliiata-13', 7)"></div>
             </div>
             
             <div class="modal-footer">
@@ -211,6 +223,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-batakliiata-13" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-batakliiata-13')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-batakliiata-13', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-batakliiata-13" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-batakliiata-13', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-batakliiata-13"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_batakliiata_13 = ["images/0_800x600.jpg", "images/10_3_800x600.jpg", "images/1_9_800x600.jpg", "images/2_2_800x600.jpg", "images/3_1_800x600.jpg", "images/4_800x600.jpg", "images/5_2_800x600.jpg", "images/6_4_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_batakliiata_13 = 0;
+        </script>
+        
     
     <div id="modal-hotels-batin-14" class="modal">
         <div class="modal-content">
@@ -228,7 +255,7 @@
 <p>През топлите месеци е удоволствие да се релаксира на чист въздух в беседката с барбекю само на метри от сградата. Гостоприемната атмосфера се допълва от изискана кухня и вежлив персонал.</p>
 <p>Сред най-добрите трофеи, отстрелвани в ДЛС Дунав са: благороден елен (13,5 кг, оценен на 250 CIC точки), сръндак  505 гр., както и глиган, чийто трофей е с повече от 220 CIC точки. Положително влияние върху качеството на трофеите оказват благоприятните климатични условия на района и добрата хранителна база в стопанството. ДЛС Дунав предлага отлични условия за лов на фазани на полигон чрез търсене с кучета. Фазаните са главно фермерско производното, но се срещат и диви в природата. Фазанарията функионира от 1975 г. Капацитетът и за развъждане е 40 000 хил., а за отглеждане е 15 000 хил. фазана годишно. В момента се отглежда главно корейски фазан, но условията позволяват развъждането и на други видове в зависимост от търсенето.</p>
 
-                <div class="modal-images"><img src="images/13_3_800x600.jpg" alt="Image"><img src="images/13a_800x600.jpg" alt="Image"><img src="images/15a_1_800x600.jpg" alt="Image"><img src="images/16_3_800x600.jpg" alt="Image"><img src="images/P10509041_800x600.jpg" alt="Image"><img src="images/Picture007_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-batin-14"><img src="images/13_3_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 0)"><img src="images/13a_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 1)"><img src="images/15a_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 2)"><img src="images/16_3_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 3)"><img src="images/P10509041_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 4)"><img src="images/Picture007_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-batin-14', 5)"></div>
             </div>
             
             <div class="modal-footer">
@@ -238,6 +265,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-batin-14" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-batin-14')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-batin-14', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-batin-14" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-batin-14', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-batin-14"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_batin_14 = ["images/13_3_800x600.jpg", "images/13a_800x600.jpg", "images/15a_1_800x600.jpg", "images/16_3_800x600.jpg", "images/P10509041_800x600.jpg", "images/Picture007_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_batin_14 = 0;
+        </script>
+        
     
     <div id="modal-hotels-elen-18" class="modal">
         <div class="modal-content">
@@ -255,7 +297,7 @@
 <p>На територията на стопанството се намира Историко-археологически резерват &quot;Сборяново&quot;. Могат да се организират посещения на Ивановски скални църкви и Бесарбовски скален манастир. От природните забележителности заслужава да се посетят защитените местности Мющерека, естествените находища на див божур и на турска леска край гр. Кубрат, скалните венци в с. Каменово.</p>
 <p>Общата площ на ловностопанските райони на ДГС Сеслав е 8754 ха. Те са разположени върху равнинно-хълмист терен със средна надморска височина 200 метра.</p>
 
-                <div class="modal-images"><img src="images/15a_800x600.jpg" alt="Image"><img src="images/18_3_800x600.jpg" alt="Image"><img src="images/21_3_800x600.jpg" alt="Image"><img src="images/_7_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-elen-18"><img src="images/15a_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-elen-18', 0)"><img src="images/18_3_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-elen-18', 1)"><img src="images/21_3_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-elen-18', 2)"><img src="images/_7_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-elen-18', 3)"></div>
             </div>
             
             <div class="modal-footer">
@@ -265,6 +307,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-elen-18" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-elen-18')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-elen-18', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-elen-18" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-elen-18', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-elen-18"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_elen_18 = ["images/15a_800x600.jpg", "images/18_3_800x600.jpg", "images/21_3_800x600.jpg", "images/_7_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_elen_18 = 0;
+        </script>
+        
     
     <div id="modal-hotels-fazan-17" class="modal">
         <div class="modal-content">
@@ -282,7 +339,7 @@
 <p>Стопанството предлага добри условия за риболов (шаран, амур) на двата язовира, с които разполага. За любителите на дивите животни и красивите гледки има възможност за организиране на фотолов и екскурзии до месните забележителности.</p>
 <p>Тук успешно се ловува на: благороден елен, сърна и дива свиня от едрия дивеч, фазан и заек - от дребния дивеч. Срещат се също така: вълк, чакал и лисица.</p>
 
-                <div class="modal-images"><img src="images/1_8_800x600.jpg" alt="Image"><img src="images/24_1_800x600.jpg" alt="Image"><img src="images/26_1_800x600.jpg" alt="Image"><img src="images/loven-dom-fazan_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-fazan-17"><img src="images/1_8_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-fazan-17', 0)"><img src="images/24_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-fazan-17', 1)"><img src="images/26_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-fazan-17', 2)"><img src="images/loven-dom-fazan_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-fazan-17', 3)"></div>
             </div>
             
             <div class="modal-footer">
@@ -292,6 +349,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-fazan-17" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-fazan-17')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-fazan-17', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-fazan-17" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-fazan-17', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-fazan-17"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_fazan_17 = ["images/1_8_800x600.jpg", "images/24_1_800x600.jpg", "images/26_1_800x600.jpg", "images/loven-dom-fazan_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_fazan_17 = 0;
+        </script>
+        
     
     <div id="modal-hotels-iri-hisar-20" class="modal">
         <div class="modal-content">
@@ -308,7 +380,7 @@
 <p>Ловният дом предлага на своите гости 7 стаи, зала за хранене и хол с огромна камина. В близост е изградено барбекю, което внася допълнителен колорит на мястото и предразполага за приятни часове на открито.</p>
 <p>Общата ловностопанска площ на ДЛС ВоденИри Хисар е 16 719 ха. На територията на ловностопански участък Ири Хисар от 7 812 ха успешно може да се ловува на благороден елен, сърна, дива свиня и хищници.</p>
 
-                <div class="modal-images"><img src="images/10_1_800x600.jpg" alt="Image"><img src="images/11009190_1433514873632031_6705853549905490336_o_800x600.jpg" alt="Image"><img src="images/11_1_800x600.jpg" alt="Image"><img src="images/13_800x600.jpg" alt="Image"><img src="images/1_4_800x600.jpg" alt="Image"><img src="images/14_800x600.jpg" alt="Image"><img src="images/18_800x600.jpg" alt="Image"><img src="images/20_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-iri-hisar-20"><img src="images/10_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-iri-hisar-20', 0)"><img src="images/11009190_1433514873632031_6705853549905490336_o_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-iri-hisar-20', 1)"><img src="images/11_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-iri-hisar-20', 2)"><img src="images/13_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-iri-hisar-20', 3)"><img src="images/1_4_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-iri-hisar-20', 4)"><img src="images/14_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-iri-hisar-20', 5)"><img src="images/18_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-iri-hisar-20', 6)"><img src="images/20_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-iri-hisar-20', 7)"></div>
             </div>
             
             <div class="modal-footer">
@@ -318,6 +390,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-iri-hisar-20" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-iri-hisar-20')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-iri-hisar-20', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-iri-hisar-20" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-iri-hisar-20', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-iri-hisar-20"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_iri_hisar_20 = ["images/10_1_800x600.jpg", "images/11009190_1433514873632031_6705853549905490336_o_800x600.jpg", "images/11_1_800x600.jpg", "images/13_800x600.jpg", "images/1_4_800x600.jpg", "images/14_800x600.jpg", "images/18_800x600.jpg", "images/20_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_iri_hisar_20 = 0;
+        </script>
+        
     
     <div id="modal-hotels-kokiche-19" class="modal">
         <div class="modal-content">
@@ -335,7 +422,7 @@
 <p>Ловът на дребен дивеч е много търсен и предлага големи емоции. Стопанството е уникално с това, че съчетава успешно ловът на едър и дребен дивеч и риболов по р. Дунав.</p>
 <p>Най-важните за района видове едър дивеч са: благороден елен, сърна и дива свиня. Представителите на дребния дивеч са: европейският заек и ловният фазан (корейски и монголски). Основните видове дребен прелетен дивеч са: пъдпъдъкът, гургулицата, гривякът, бекасът, различни видове патици (зеленоглавата, лятното и зимното бърне) и голямата белочела гъска. В района има и много видове хищници  чакал, лисица, дива котка и по-рядко вълк.</p>
 
-                <div class="modal-images"><img src="images/1_7_800x600.jpg" alt="Image"><img src="images/5_1_800x600.jpg" alt="Image"><img src="images/6_3_800x600.jpg" alt="Image"><img src="images/_6_800x600.jpg" alt="Image"><img src="images/P10509151_2_800x600.jpg" alt="Image"><img src="images/Picture038_2_800x600.jpg" alt="Image"><img src="images/Picture159_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-kokiche-19"><img src="images/1_7_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-kokiche-19', 0)"><img src="images/5_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-kokiche-19', 1)"><img src="images/6_3_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-kokiche-19', 2)"><img src="images/_6_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-kokiche-19', 3)"><img src="images/P10509151_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-kokiche-19', 4)"><img src="images/Picture038_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-kokiche-19', 5)"><img src="images/Picture159_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-kokiche-19', 6)"></div>
             </div>
             
             <div class="modal-footer">
@@ -345,6 +432,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-kokiche-19" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-kokiche-19')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-kokiche-19', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-kokiche-19" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-kokiche-19', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-kokiche-19"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_kokiche_19 = ["images/1_7_800x600.jpg", "images/5_1_800x600.jpg", "images/6_3_800x600.jpg", "images/_6_800x600.jpg", "images/P10509151_2_800x600.jpg", "images/Picture038_2_800x600.jpg", "images/Picture159_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_kokiche_19 = 0;
+        </script>
+        
     
     <div id="modal-hotels-lugut-16" class="modal">
         <div class="modal-content">
@@ -362,7 +464,7 @@
 <p>Ловната резиденция на ДЛС Росица - Лъгът е красива триетажна сграда в алпийски стил, разположена в живописната долина на река Зелениковец. Построена е през 1986 година, а през 2008 г. е изцяло реновирана. Може да приеме до 15 гости едновременно в четири апартамента, две двойни и три единични стаи. Удобствата в стаите включват: баня с душкабина, кабелна телевизия, Wi-Fi интернет, балкон и прекрасна гледка към планината.</p>
 <p>Ловното стопанство предлага и конна езда, фотолов и екотуризъм.</p>
 
-                <div class="modal-images"><img src="images/0a_800x600.jpg" alt="Image"><img src="images/10_2_800x600.jpg" alt="Image"><img src="images/11_2_800x600.jpg" alt="Image"><img src="images/12_2_800x600.jpg" alt="Image"><img src="images/13_2_800x600.jpg" alt="Image"><img src="images/14_2_800x600.jpg" alt="Image"><img src="images/15_1_800x600.jpg" alt="Image"><img src="images/16_2_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-lugut-16"><img src="images/0a_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-lugut-16', 0)"><img src="images/10_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-lugut-16', 1)"><img src="images/11_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-lugut-16', 2)"><img src="images/12_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-lugut-16', 3)"><img src="images/13_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-lugut-16', 4)"><img src="images/14_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-lugut-16', 5)"><img src="images/15_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-lugut-16', 6)"><img src="images/16_2_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-lugut-16', 7)"></div>
             </div>
             
             <div class="modal-footer">
@@ -372,6 +474,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-lugut-16" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-lugut-16')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-lugut-16', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-lugut-16" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-lugut-16', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-lugut-16"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_lugut_16 = ["images/0a_800x600.jpg", "images/10_2_800x600.jpg", "images/11_2_800x600.jpg", "images/12_2_800x600.jpg", "images/13_2_800x600.jpg", "images/14_2_800x600.jpg", "images/15_1_800x600.jpg", "images/16_2_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_lugut_16 = 0;
+        </script>
+        
     
     <div id="modal-hotels-voden-i-21" class="modal">
         <div class="modal-content">
@@ -387,7 +504,7 @@
 <p>След основен ремонт, от началото на месец септември 2015 ловната резиденция отново отвори врати. Сградата съчетава великолепието на миналото и комфорта на съвремието. В напълно реновираните 9 апартамента, 4 мезонета и 2 стаи, могат да се настанят до 30 души едновременно. На разположение на посетителите са още сауна, джакузи, парна баня и бар.</p>
 <p>Стопанството държи националните рекорди от трофеи на елен лопатар - 207,59 CIC точки (3,99 кг.) и муфлон - 240,05 CIC т. (109,50 см.). Седем от десетте най-добри трофеи на муфлон в България са добити в ДЛС Воден - Ири Хисар. В лова на дива свиня също има отлични резултати, тъй като се среща в значително количество. Успешно се ловува индивидуално от чакало, където е възможен отстрелът на сериозни трофеи. Доказателство затова са два трофея, които са в челната десятка на страната, оценени със 140,15 CIC т. (25,45 см.) и 137,95 CIC т. (28,20 см.). Единствено във Воден у нас може да се ловува Европейски зубър, макар от няколко години популацията му да е силно намаляла, все още се отпускат единични бройки за отстрел. Ловните територии на стопанството предлагат прекрасни условия за изключително емоционалния лов на сръндак. Трофеите са между 350-500 гр. Най-добрите трофеи от сръндак за последния ловен сезон са 137,43 CIC точки (590 гр) и 133,68 CIC точки (570 гр).</p>
 
-                <div class="modal-images"><img src="images/11229960_1433652940284891_9209613667502563367_n_800x600.jpg" alt="Image"><img src="images/5_4_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-voden-i-21"><img src="images/11229960_1433652940284891_9209613667502563367_n_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-voden-i-21', 0)"><img src="images/5_4_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-voden-i-21', 1)"></div>
             </div>
             
             <div class="modal-footer">
@@ -397,6 +514,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-voden-i-21" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-voden-i-21')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-voden-i-21', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-voden-i-21" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-voden-i-21', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-voden-i-21"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_voden_i_21 = ["images/11229960_1433652940284891_9209613667502563367_n_800x600.jpg", "images/5_4_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_voden_i_21 = 0;
+        </script>
+        
     
     <div id="modal-hotels-voden-ii-15" class="modal">
         <div class="modal-content">
@@ -412,7 +544,7 @@
 <p>Общата ловностопанска площ на ДЛС ВоденИри Хисар е 16 719 ха. На територията на ловностопански участък Воден от 8 907 ха успешно се ловуват благороден елен, елен лопатар, сърна, зубър, муфлон, дива свиня и хищници. Причината за съхраненото богато видово разнообразие и големия брой едър дивеч на такава малка територия се крие в дълбоките традиции на дивечовъдството и изключителната хранителна база в региона. Тук е най-силната популация на благороден елен в света. ДЛС Воден  Ири Хисар е трикратен световен рекордьор на трофей от благороден елен - и трите добити в ловностопански участък Ири Хисар: 253,62 CIC точки (14,9 кг.), 256,78 CIC точки (14,56 кг.) и 263,23 CIC точки (14,8 кг.). Девет от петнадесетте най-големи трофея от този вид у нас са отстреляни на територията на стопанството. Значителен е броят на капиталните трофеи над 250 CIC точки, отстреляни предимно през 80-те години на XX век. В по-ново време трофеи от порядъка на 224,95 CIC точки (септември 2012 г.) и 227,84 CIC точки (септември 2015 г.)  са заявка за нова генерация със забележителни характеристики.</p>
 <p>Стопанството държи националните рекорди от трофеи на елен лопатар - 207,59 CIC точки (3,99 кг.) и муфлон - 240,05 CIC т. (109,50 см.). Седем от десетте най-добри трофеи на муфлон в България са добити в ДЛС Воден - Ири Хисар. В лова на дива свиня също има отлични резултати, тъй като се среща в значително количество. Успешно се ловува индивидуално от чакало, където е възможен отстрелът на сериозни трофеи. Доказателство затова са два трофея, които са в челната десятка на страната, оценени със 140,15 CIC т. (25,45 см.) и 137,95 CIC т. (28,20 см.). Единствено във Воден у нас може да се ловува Европейски зубър, макар от няколко години популацията му да е силно намаляла, все още се отпускат единични бройки за отстрел. Ловните територии на стопанството предлагат прекрасни условия за изключително емоционалния лов на сръндак. Трофеите са между 350-500 гр. Най-добрите трофеи от сръндак за последния ловен сезон са 137,43 CIC точки (590 гр) и 133,68 CIC точки (570 гр).</p>
 
-                <div class="modal-images"><img src="images/0_800x600.jpg" alt="Image"><img src="images/13_1_800x600.jpg" alt="Image"><img src="images/14_1_800x600.jpg" alt="Image"><img src="images/1_5_800x600.jpg" alt="Image"><img src="images/15A_800x600.jpg" alt="Image"><img src="images/15B_800x600.jpg" alt="Image"><img src="images/16_1_800x600.jpg" alt="Image"><img src="images/17_800x600.jpg" alt="Image"></div>
+                <div class="modal-images" id="gallery-modal-hotels-voden-ii-15"><img src="images/0_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-voden-ii-15', 0)"><img src="images/13_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-voden-ii-15', 1)"><img src="images/14_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-voden-ii-15', 2)"><img src="images/1_5_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-voden-ii-15', 3)"><img src="images/15A_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-voden-ii-15', 4)"><img src="images/15B_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-voden-ii-15', 5)"><img src="images/16_1_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-voden-ii-15', 6)"><img src="images/17_800x600.jpg" alt="Image" onclick="openLightbox('modal-hotels-voden-ii-15', 7)"></div>
             </div>
             
             <div class="modal-footer">
@@ -422,6 +554,21 @@
         
         </div>
     </div>
+    
+        <div id="lightbox-modal-hotels-voden-ii-15" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox('modal-hotels-voden-ii-15')">&times;</span>
+            <div class="lightbox-content">
+                <span class="lightbox-nav lightbox-prev" onclick="changeLightboxImage('modal-hotels-voden-ii-15', -1)">&#10094;</span>
+                <img id="lightbox-img-modal-hotels-voden-ii-15" class="lightbox-image" src="" alt="Gallery">
+                <span class="lightbox-nav lightbox-next" onclick="changeLightboxImage('modal-hotels-voden-ii-15', 1)">&#10095;</span>
+            </div>
+            <div class="lightbox-counter" id="lightbox-counter-modal-hotels-voden-ii-15"></div>
+        </div>
+        <script>
+            window.galleryImages_modal_hotels_voden_ii_15 = ["images/0_800x600.jpg", "images/13_1_800x600.jpg", "images/14_1_800x600.jpg", "images/1_5_800x600.jpg", "images/15A_800x600.jpg", "images/15B_800x600.jpg", "images/16_1_800x600.jpg", "images/17_800x600.jpg"];
+            window.currentLightboxIndex_modal_hotels_voden_ii_15 = 0;
+        </script>
+        
     
     <script src="assets/js/main.js"></script>
 </body>
