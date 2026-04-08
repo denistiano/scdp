@@ -97,6 +97,29 @@ h1, h2, h3, h4 {
     line-height: 1.2;
 }
 
+/* Unofficial / fan notice — thin, unobtrusive */
+.site-notice {
+    background: #252a22;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 12px;
+    line-height: 1.45;
+    padding: 6px 14px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.site-notice a {
+    color: #c9b896;
+    text-decoration: none;
+}
+
+.site-notice a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
 /* Top Bar */
 .top-bar {
     background: var(--dark);
@@ -759,6 +782,12 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .site-notice {
+        font-size: 10.5px;
+        line-height: 1.5;
+        padding: 5px 10px;
+    }
+
     .hero { 
         height: 40vh;
         min-height: 300px;
@@ -1163,6 +1192,12 @@ def categorize_pages(pages):
 def generate_header():
     """Generate header with responsive logos"""
     return '''
+    <div class="site-notice" role="note">
+        Модернизиран изглед към съдържанието от
+        <a href="https://scdp.bg/" target="_blank" rel="noopener noreferrer">scdp.bg</a>.
+        СЦДП — за момента го предоставям безплатно, но при интерес за интеграция на сайта и съвместна работа:
+        <a href="tel:+359898513566">089 851 35 66</a>.
+    </div>
     <div class="top-bar">
         <div class="container">
             <div>☎ 066/800-077 | ✉ <a href="mailto:booking@scdp.bg">booking@scdp.bg</a></div>
