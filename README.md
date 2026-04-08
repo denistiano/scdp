@@ -11,6 +11,29 @@ Modern hunting and tourism website for SCDP (Североцентралното 
 cd website && python3 -m http.server 8000
 ```
 
+## GitHub Pages
+
+The public site is built in CI as static files under **`website/`** and deployed with **GitHub Actions** (not “Deploy from a branch”).
+
+1. Repository **Settings → Pages → Build and deployment**.
+2. Under **Source**, choose **GitHub Actions**.
+3. Run **Hunt marks — scrape, rebuild, deploy** once (or wait for the schedule); the site URL appears on the Pages settings page.
+
+**`hunt-marks-schedule.yml`** scrapes, runs `build_from_json.py`, uploads **`website/`** to Pages, and does **not** commit generated files.
+
+## Generated files (gitignored)
+
+These are produced locally or in Actions and should **not** be committed:
+
+- **`website/`** — output of `build_from_json.py`
+- **`hunt_marks_data.json`** — output of `crawl_hunt_marks.py`
+
+Keep **source** inputs in git (from `./crawl_booking_site.sh` when you refresh): `booking_content.json`, `booking_images/`, `booking_files/`, `hunting_hero_images/`.
+
+If you previously committed `website/` or `hunt_marks_data.json`, remove them from the index once:
+
+`git rm -r --cached website hunt_marks_data.json 2>/dev/null || true`
+
 ## Architecture
 
 ### Core Scripts
@@ -81,26 +104,18 @@ python3 build_from_json.py
 
 ```
 scdp.github.io/
-├── build_from_json.py        # Main website builder (all pages)
+├── build_from_json.py         # Main website builder (all pages)
 ├── crawl_hunt_marks.py        # Hunt marks data scraper
 ├── crawl_booking_site.sh      # Website content crawler
-├── create_sample_hunt_marks.py # Sample data generator
-├── download_hunting_images.sh # Hero images downloader
-├── rebuild_all.sh             # Complete rebuild script
-├── hunt_marks_data.json       # Hunt marks data
-├── booking_content.json       # Website content
-├── hunting_hero_images/       # Hero background images
-└── website/                   # Generated website
-    ├── index.html
-    ├── hotels.html
-    ├── services.html
-    ├── news.html
-    ├── contacts.html
-    ├── hunt-marks.html
-    ├── assets/
-    │   ├── css/
-    │   └── js/
-    └── images/
+├── create_sample_hunt_marks.py
+├── download_hunting_images.sh
+├── rebuild_all.sh
+├── booking_content.json       # Source (commit)
+├── hunting_hero_images/       # Source (commit)
+├── booking_images/            # Source (commit)
+├── booking_files/             # Source (commit)
+├── hunt_marks_data.json       # Generated — gitignored
+└── website/                   # Generated — gitignored
 ```
 
 ## Notes

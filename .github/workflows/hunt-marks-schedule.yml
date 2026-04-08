@@ -1,14 +1,13 @@
-# Automatic: scrape latest hunt marks (справка) → rebuild static site → commit.
-# Configure GitHub Pages to publish from the `website/` folder on your default branch
-# (Settings → Pages → Build from branch → /website), or use a compatible setup.
+# Scrape hunt marks → rebuild /website → deploy to GitHub Pages (nothing committed).
 #
-# Schedule: every 5 minutes (UTC). This matches GitHub’s supported minimum for `schedule`;
-# increase the cron interval later when you are done testing (e.g. hourly).
+# Pages: Settings → Pages → Source = "GitHub Actions".
 #
-# Requires in the repo: booking_content.json, hunting_hero_images/, booking_images/ (if used),
-# booking_files/ (if used) — same as a local `python3 build_from_json.py` run.
+# Schedule: every 5 minutes (UTC) for testing; relax the cron later.
+#
+# Repo must contain source inputs: booking_content.json, hunting_hero_images/,
+# booking_images/, booking_files/ (from crawl_booking_site.sh when you refresh content).
 
-name: Hunt marks — scrape and rebuild site
+name: Hunt marks — scrape, rebuild, deploy
 
 on:
   schedule:
@@ -16,17 +15,35 @@ on:
   workflow_dispatch: {}
   repository_dispatch:
     types: [refresh-hunt-marks]
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'build_from_json.py'
+      - 'crawl_hunt_marks.py'
+      - 'booking_content.json'
+      - 'crawl_booking_site.sh'
+      - 'download_hunting_images.sh'
+      - 'hunting_hero_images/**'
+      - 'booking_images/**'
+      - 'booking_files/**'
 
 concurrency:
   group: hunt-marks-refresh
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  scrape-and-build:
+  scrape-build-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,17 +59,17 @@ jobs:
       - name: Scrape hunt marks
         run: python3 crawl_hunt_marks.py
 
-      - name: Rebuild website (embeds fresh hunt_marks_data.json)
+      - name: Rebuild website
         run: python3 build_from_json.py
 
-      - name: Commit and push if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add hunt_marks_data.json website
-          if git diff --staged --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "chore: refresh hunt marks and rebuild site [skip ci]"
-            git push
-          fi
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: website
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -24,6 +24,7 @@ def clean_directories():
     for dir_path in [OUTPUT_DIR, f"{OUTPUT_DIR}/assets/css", f"{OUTPUT_DIR}/assets/js",
                      f"{OUTPUT_DIR}/images", f"{OUTPUT_DIR}/files"]:
         os.makedirs(dir_path, exist_ok=True)
+    Path(OUTPUT_DIR, ".nojekyll").touch()
 
 def copy_assets():
     """Copy all extracted assets"""
